@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import InitScreen from "./initScreen";
+import { auth } from "./firebaseconfig";
+import { useState, useEffect } from "react";
+import HomePage from "./pages/homepage/HomePage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubcribed = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+    return () => unsubcribed();
+  }, []);
+
+  console.log(user);
+  return <>{user ? <HomePage user={user} /> : <InitScreen />}</>;
 }
 
 export default App;
