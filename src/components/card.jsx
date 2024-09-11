@@ -55,10 +55,13 @@ const CardList = () => {
   const [searchItem, setSearchItem] = useState("");
   const [filteredList, setFilteredList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+/*
+src/assets/bigbasket.json
+src/components/card.jsx
+ */
   useEffect(() => {
     console.log("fetching json data");
-    fetch("/bigbasket.json")
+    fetch("e-commerce/bigbasket.json")
       .then((response) => {
         setIsLoading(false);
         return response.json();
