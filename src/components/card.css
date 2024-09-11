@@ -46,10 +46,8 @@
     cursor: pointer;
     background-color: rgb(175, 176, 177);
   }
-  &:hover h2 {
-    /* overflow: visible; */
-    /* color: rgb(0, 0, 0); */
-  }
+  /* overflow: visible; */
+  /* color: rgb(0, 0, 0); */
 }
 
 .cardContainer {
@@ -58,7 +56,6 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   /* overflow: hidden; */
   justify-content: center;
-
 }
 
 /* .cardMain  {
