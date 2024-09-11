@@ -1,0 +1,132 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgb(143, 140, 140);
+  padding: 12px;
+  margin: 12px;
+  border-radius: 5px;
+  /* width: clamp(20vw, 500px, auto); */
+  /* border: 2px solid red; */
+  color: black;
+  height: auto;
+  width: max(250px, auto);
+  /* width: 250px; */
+  /* overflow: hidden; */
+  transition: 0.3s ease;
+  overflow: hidden;
+  & img {
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    /* background-color: rgb(255, 255, 255); */
+    padding: 12px;
+    height: 200px;
+    width: 100%;
+  }
+  & .originaPrice {
+    color: red;
+    text-decoration: line-through;
+  }
+  & span {
+    color: green;
+  }
+  & h2 {
+    font-size: 1rem;
+    overflow: hidden;
+    color: rgb(33, 34, 34);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  &:hover {
+    /* position: sticky; */
+    /* left: 0; */
+    /* right: 0; */
+    transform: scale(1.03);
+    cursor: pointer;
+    background-color: rgb(175, 176, 177);
+  }
+  &:hover h2 {
+    /* overflow: visible; */
+    /* color: rgb(0, 0, 0); */
+  }
+}
+
+.cardContainer {
+  margin: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* overflow: hidden; */
+  justify-content: center;
+
+}
+
+/* .cardMain  {
+  color: rgb(0, 130, 196);
+  font-size: 1.5em;
+  background-color: #3498db;
+} */
+/*
+.cardMain button {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  font-size: 1.5rem;
+
+  &:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+  }
+} */
+
+.searchArea {
+  display: flex;
+  margin: 12px;
+  justify-content: center;
+  align-items: center;
+  & input {
+    color: rgb(54, 54, 54);
+  }
+  & input::placeholder {
+    color: black;
+  }
+  & button {
+    transition: 0.3s ease;
+    /* border: 1px solid rgb(255, 255, 255); */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 100%);
+    background-color: rgb(124, 243, 217);
+    /* background-color: transparent; */
+    &:hover {
+      background-color: rgb(255, 153, 0);
+      cursor: pointer;
+    }
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  z-index: 1000;
+}
+.spining {
+  border: 8px solid #8193d1; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
