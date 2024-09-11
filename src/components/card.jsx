@@ -55,13 +55,18 @@ const CardList = () => {
   const [searchItem, setSearchItem] = useState("");
   const [filteredList, setFilteredList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-/*
+  /*
 src/assets/bigbasket.json
 src/components/card.jsx
+https://drive.google.com/file/d/1qQV764f-38Y_-BMj9-nWjkwdJMQF0rVn/view?usp=sharing
+file_id = 1qQV764f-38Y_-BMj9-nWjkwdJMQF0rVn
+direct_download = https://drive.google.com/uc?export=download&id=1qQV764f-38Y_-BMj9-nWjkwdJMQF0rVn
  */
+  // const json_url =
+  // "https://drive.google.com/uc?export=download&id=1qQV764f-38Y_-BMj9-nWjkwdJMQF0rVn";
   useEffect(() => {
     console.log("fetching json data");
-    fetch("e-commerce/bigbasket.json")
+    fetch("https://charan-nunnabhatla.github.io/e-commerce/bigbasket.json")
       .then((response) => {
         setIsLoading(false);
         return response.json();
@@ -78,6 +83,7 @@ src/components/card.jsx
         setIsLoading(false);
         console.error("error: ", e);
       });
+    return () => {};
   }, []);
 
   // useEffect(() => {
