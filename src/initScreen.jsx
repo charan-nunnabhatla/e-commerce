@@ -1,14 +1,15 @@
-import LoginPage from "./pages/login_page/loginPage.jsx";
-import CreateUser from "./pages/create_user/createUser";
+import LoginPage from "./pages/auth/loginPage.jsx";
+import CreateUser from "./pages/auth/createUser.jsx";
 import { useState } from "react";
-import './App.css'
+import "./initScreenStyle.css";
+import React from "react";
 
 const InitScreen = () => {
   const [toggleSign, setToggleSign] = useState(false);
   let buttonName = toggleSign ? "Log in " : "Sign up";
   return (
-    <div className="mainInitScreen">
-      <header>
+    <div className="initScreen">
+      <header className="initHeader">
         Commute
         <button
           onClick={() => {
@@ -18,12 +19,12 @@ const InitScreen = () => {
           {buttonName}
         </button>
       </header>
-      <main>
+      <main className="initMain">
         {toggleSign ? <CreateUser /> : <LoginPage />}
         {/* <LoginPage /> */}
         {/* <CreateUser /> */}
       </main>
-      <footer>lsdkfjksdjf</footer>
+      <footer className="initFooter">Footer</footer>
     </div>
   );
 };
