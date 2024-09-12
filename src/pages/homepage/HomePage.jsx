@@ -12,7 +12,7 @@ const HomePage = ({ user }) => {
   return (
     <div className="homePage">
       <header className="homePageHeader">
-        <h1>Home Page</h1>
+        <h1>Grocery</h1>
         <button onClick={handleSignOut}>Sign out</button>
         <button>Add</button>
       </header>
