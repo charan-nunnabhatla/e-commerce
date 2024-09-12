@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./card.css";
 import React from "react";
 import LazyLoad from "react-lazyload";
+import { TbCurrencyRupeeNepalese } from "react-icons/tb";
 
 const Card = ({
   ProductName,
@@ -19,6 +20,7 @@ const Card = ({
   };
   return (
     <div className="card" onClick={handleClick}>
+      {Category}
       <LazyLoad>
         <img src={Image_Url} alt={ProductName} />
       </LazyLoad>
@@ -29,7 +31,10 @@ const Card = ({
         <h3>{Brand}</h3>
         <h3>
           <span className="originaPrice">{Price} </span>
-          <span>{DiscountPrice}</span>
+          <span>
+            <TbCurrencyRupeeNepalese />
+            {DiscountPrice}
+          </span>
         </h3>
       </div>
     </div>
